@@ -1,0 +1,62 @@
+﻿@model AddOrderItem
+
+@{
+    ViewData["Title"] = "Cookbooks | Plankcooking.com";
+}
+
+@Html.Partial("_ShopPartial")
+<div class="shop-content container-fluid col-xs-12 col-md-9">
+    <div class="shop-header hidden-xs hidden-sm">
+        <img class="shop-img" src="~/images/Cookbooks_Header.png" />
+    </div>
+    <div class="shop-header-sm container-fluid hidden-md hidden-lg">
+        <img class="img-responsive" src="~/images/Cookbooks_Header.png" />
+    </div>
+
+@foreach (var product in Model.Products.OrderBy(p => p.SortOrder))
+{
+    <div class="img-responsive paper-background">
+        <div class="container-fluid shop-container">
+            <div class="dotted_line_top">
+                <div class="content-titles-Shop dotted_line_bottom dotted_line_right">
+                   @product.Name
+                </div>
+            </div>
+            <p class="left-align hidden-md hidden-lg">@product.Description</p>
+            <div class="shop-description">
+                <div class="container-fluid">
+                    <p class="left-align hidden-xs hidden-sm">@product.Description</p>
+                </div>
+                <div>
+                    <div class="container-fluid">
+                        <p>Price: $@decimal.Round(product.Price, 2, MidpointRounding.AwayFromZero)</p>
+                        <form asp-action="AddToCart">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group flexInline">
+                                <div>
+                                    <label asp-for="Qty" class="control-label">Quantity:</label>
+                                </div>
+                                <div>
+                                    <input asp-for="Qty" class="form-control qty" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="hidden" asp-for="ProductId" class="form-control" value="@product.ProductId" />
+                            </div>
+                            <div class="form-group">
+                                <input type="image" value="AddToCart" class="btn" src="~/images/AddToCart_button.png" />
+                            </div>
+                        </form>
+                        <img src="@product.ImagePath" />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+}
+
+</div>
+

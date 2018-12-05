@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Products | Plankcooking.com";
+}
+
+@Html.Partial("_ShopPartial")
+<div class="container-fluid col-xs-12 col-md-9">
+    <div class="container-fluid img-responsive paper-background-shop">
+        <div class="dotted_line_top">
+            <div class="content-titles-Shop dotted_line_bottom dotted_line_right">
+                PLANKCOOKING PRODUCTS
+            </div>
+        </div>
+
+        <div class="shop-cubes">
+            <div><a asp-area="" asp-controller="Shop" asp-action="SpiceRubs"><img src="~/images/SpiceRubs_cube.png" class="img-responsive" /></a></div>
+            <div><a asp-area="" asp-controller="Shop" asp-action="BakingPlanks"><img src="~/images/BakingPlanks_cube.png" class="img-responsive" /></a></div>
+        </div>
+        <div class="shop-cubes">
+            <div><a asp-area="" asp-controller="Shop" asp-action="Cookbooks"><img src="~/images/Cookbooks_cube.png" class="img-responsive" /></a></div>
+            <div><a asp-area="" asp-controller="Shop" asp-action="BBQPlanks"><img src="~/images/BBQ_Planks_cube.png" class="img-responsive" /></a></div>
+        </div>
+    </div>
+</div>
+

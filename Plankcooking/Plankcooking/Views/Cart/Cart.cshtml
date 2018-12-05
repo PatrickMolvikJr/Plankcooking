@@ -1,0 +1,79 @@
+﻿@model CartViewModel
+   
+@{
+    ViewData["Title"] = "Cart | Plankcooking.com";
+}
+
+<div class="cart-header container-fluid">
+    <div>
+        SHOPPING CART: Your shopping cart contains itmes.
+    </div>
+    <div class="cart-header-btns">
+        <a asp-area="" asp-controller="Shop" asp-action="Index"><img src="~/images/ContinueShopping_button.png" class="img-responsive" /></a>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <a asp-area="" asp-controller="Cart" asp-action="Checkout"><img src="~/images/Checkout_button.png" class="img-responsive" /></a>
+    </div>
+
+</div>
+
+<div class="container-fluid cart-table-div">
+   <table class="cart-table">
+    <tr>
+        <th class="cart-th">
+            Shipping to You
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+        @foreach (var orderItem in Model.OrderItems.Where(o => o.OrderCartId == Model.OrderCartId))
+        {
+            @foreach (var product in Model.Products.Where(p => p.ProductId == orderItem.ProductId))
+            {
+
+            <tr>
+                <td>
+                    @product.Name
+                </td>
+                <td>
+                    <p>$@decimal.Round(product.Price, 2, MidpointRounding.AwayFromZero)</p>
+                </td>
+                <td>
+                    <input class="quantity" placeholder=@orderItem.Qty type="text" />
+                </td>
+                <td>
+                    <div class="total">
+                        <p>$@decimal.Round(product.Price, 2, MidpointRounding.AwayFromZero)</p>
+                        <a asp-action="Delete" asp-route-id="@orderItem.OrderItemId"><img src="~/images/Remove_Button.png" /></a>
+                    </div>
+                    
+                </td>
+            </tr> 
+            }
+        }
+
+        <tr>
+            <td class="subtotal-row cart-td" colspan="4">
+                Subtotal: &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; $6.00
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div class="cart-bottom-row">
+                    <a asp-area="" asp-controller="Shop" asp-action="Index"><img src="~/images/ContinueShopping_button.png" class="img-responsive" /></a>
+                    &nbsp;
+                    &nbsp;
+                    <a asp-area="" asp-controller="Cart" asp-action="Checkout"><img src="~/images/Checkout_button.png" class="img-responsive" /></a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+

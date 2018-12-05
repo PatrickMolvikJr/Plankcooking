@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\CookieController.cs" />
+    <Compile Remove="Controllers\ShopPartialController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Shop\_IndexPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Views\Shop\ShopPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.7.385" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,53 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div id="sidebar" class="hidden-xs hidden-sm col-md-3">
+    <div style="text-align:center; width:100%;">
+        <div>
+            <img src="~/images//Shop_MenuHeader.png" alt="Page Title" />
+            <div style="text-align:center; max-width:225px; margin: 0 auto;">
+
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+
+                <div>
+                    <a asp-action="SpiceRubs" asp-controller="Shop"><span class="leftMenuTitle">SPICE RUBS</span></a>
+                </div>
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+                <div>
+                    <a asp-area="" asp-controller="Shop" asp-action="Cookbooks"><span class="leftMenuTitle">COOKBOOKS</span></a>
+                </div>
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+                <div>
+                    <a asp-area="" asp-controller="Shop" asp-action="BakingPlanks"><span class="leftMenuTitle">BAKING PLANKS</span></a>
+                </div>
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+                <div>
+                    <a asp-area="" asp-controller="Shop" asp-action="BBQPlanks"><span class="leftMenuTitle">BBQ PLANKS</span></a>
+                </div>
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+                <div>
+                    <a asp-area="" asp-controller="Shop" asp-action="NutDriver"><span class="leftMenuTitle">NUT DRIVER</span></a>
+                </div>
+                <div style="margin:10px 0px 10px 10px;" class="dotted_line_about"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="visible-xs visible-sm">
+    <div class="btn-group">
+        <button class="btn btn-lg dropdown-toggle about-btn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span style="font-size:24px;">Shop</span>
+            <span class="caret"></span>
+        </button>
+
+        <ul class="dropdown-menu" style="width:280px;">
+            <li style="height:30px;"><a asp-area="" asp-controller="Shop" asp-action="SpiceRubs"><span class="leftMenuTitle">SPICE RUBS</span></a></li>
+            <li style="height:30px;"><a asp-area="" asp-controller="Shop" asp-action="Cookbooks"><span class="leftMenuTitle">COOKBOOKS</span></a></li>
+            <li style="height:30px;"><a asp-area="" asp-controller="Shop" asp-action="BakingPlanks"><span class="leftMenuTitle">BAKING PLANKS</span></a></li>
+            <li style="height:30px;"><a asp-area="" asp-controller="Shop" asp-action="BBQPlanks"><span class="leftMenuTitle">BBQ PLANKS</span></a></li>
+            <li style="height:30px;"><a asp-area="" asp-controller="Shop" asp-action="NutDriver"><span class="leftMenuTitle">NUT DRIVER</span></a></li>
+        </ul>
+    </div>
+</div>
